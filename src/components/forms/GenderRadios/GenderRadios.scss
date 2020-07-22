@@ -1,0 +1,117 @@
+.gender {
+  display: flex;
+  align-items: center;
+
+  &.is-required {
+    .gender-label {
+      &:before {
+        content: '*';
+        font-size: 1.3em;
+        color: #eb5279;
+      }
+    }
+  }
+
+  .gender-label {
+    flex: none;
+    min-width: 140px;
+    height: 20px;
+    font-weight: 400;
+    white-space: nowrap;
+    line-height: 20px;
+    padding-left: 1px;
+    padding-right: 10px;
+
+    &:after {
+      content: ' :';
+    }
+  }
+
+  .gender-input {
+    height: 20px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .gender-input + .gender-input {
+    margin-left: 60px;
+  }
+
+  .gender-input-checked {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #eb5279;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      border-radius: inherit;
+      background-color: #fff;
+    }
+  }
+
+  .gender-input-label {
+    position: initial;
+    font-size: inherit;
+    font-weight: 300;
+    color: inherit;
+    height: inherit;
+    padding-left: 28px;
+  }
+
+  input[type='radio'] {
+    width: 100%;
+    height: calc(100% + 3px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0 none;
+    }
+  }
+
+  input[type='radio'][readonly],
+  input[type='radio'][disabled] {
+    pointer-events: none;
+  }
+
+  input[type='radio'][readonly] ~ .gender-input-checked,
+  input[type='radio'][disabled] ~ .gender-input-checked {
+    border-color: #babeda;
+    background-color: transparent;
+
+    &:before {
+      background-color: transparent;
+    }
+  }
+
+  input[type='radio'][readonly]:checked ~ .gender-input-checked,
+  input[type='radio'][disabled]:checked ~ .gender-input-checked {
+    &:before {
+      background-color: #d3d6f3;
+    }
+  }
+
+  input[type='radio']:checked ~ .gender-input-checked {
+    &:before {
+      background-color: #eb5279;
+    }
+  }
+}

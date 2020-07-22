@@ -1,0 +1,79 @@
+.mobile-phone {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &.is-error {
+    input {
+      border-color: #ffffff;
+      box-shadow: 0 0 0 1px #cc7197;
+    }
+  }
+
+  &.is-required {
+    .mobile-phone-label {
+      &:before {
+        content: '*';
+        font-size: 1.3em;
+        color: #eb5279;
+      }
+    }
+  }
+
+  .mobile-phone-label {
+    flex: none;
+    min-width: 140px;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    padding-left: 1px;
+    padding-right: 10px;
+
+    &:after {
+      content: ' :';
+    }
+  }
+
+  .mobile-phone-inputs {
+    display: flex;
+    .select,
+    .input {
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    .select {
+      flex-basis: 100px;
+
+      .single-value-icon {
+        &.thai-flag-icon {
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+          position: relative;
+          top: -1px;
+          background-image: url('~images/thai-flag.png');
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 24px auto;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .input {
+      flex-basis: 220px;
+      margin-left: 36px;
+      position: relative;
+
+      &:before {
+        content: '-';
+        position: absolute;
+        top: 8px;
+        right: calc(100% + 16px);
+      }
+    }
+  }
+}

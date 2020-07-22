@@ -1,0 +1,202 @@
+.pagination {
+  display: inline-block;
+
+  &.is-disabled {
+    .pagination-list,
+    .pagination-option {
+      opacity: 0.4;
+      cursor: not-allowed;
+
+      * {
+        pointer-events: none;
+      }
+    }
+
+    .pagination-option {
+      .score-select {
+        border-color: #d1d9e0;
+      }
+    }
+
+    .pagination-list {
+      .pagination-item {
+        border-color: #d1d9e0;
+
+        &.is-current {
+          background: #d1d9e0;
+        }
+      }
+    }
+  }
+
+  .pagination-list,
+  .pagination-option {
+    float: left;
+  }
+
+  .pagination-option {
+    font-size: 13px;
+    padding-right: 15px;
+
+    .pagination-size-select,
+    .pagination-size-text {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .pagination-size-text {
+      min-width: 40px;
+      text-align: right;
+
+      .current {
+        color: #963493;
+      }
+    }
+
+    .pagination-size-select {
+      margin-left: 8px;
+      margin-right: 8px;
+
+      .pagination-size-select__control {
+        min-width: 70px;
+        min-height: initial;
+        min-height: 27px;
+        border-color: #f9bccb !important;
+        box-shadow: 0 0 0 0 #2684ff;
+        background-color: #fff;
+
+        &.pagination-size-select__control--is-focused {
+          box-shadow: 0 0 0 1px #2684ff;
+        }
+
+        .pagination-size-select__value-container {
+          padding: 0;
+          padding-left: 10px;
+
+          .pagination-size-select__single-value {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        .pagination-size-select__indicator-separator {
+          display: none;
+        }
+
+        .pagination-size-select__indicator {
+          width: 25px;
+          height: 25px;
+          background-image: url('~images/down.png');
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 8px auto;
+
+          svg {
+            display: none;
+          }
+        }
+      }
+
+      .pagination-size-select__menu {
+        margin-top: -1px;
+        margin-bottom: 0;
+        border: 1px solid #b4d3ea;
+        box-shadow: 0 0 6px 2px rgba(174, 192, 230, 0.5);
+        overflow: hidden;
+
+        .pagination-size-select__menu-list {
+          padding: 0;
+          max-height: initial;
+
+          .pagination-size-select__option {
+            color: inherit;
+            background-color: #fff;
+            padding: 6px 10px 5px 4px;
+            text-align: center;
+            line-height: 1.1;
+
+            &.pagination-size-select__option--is-selected {
+              color: inherit;
+              background-color: #fff;
+            }
+
+            &.pagination-size-select__option--is-focused {
+              color: #fff;
+              background-color: #eb5279;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pagination-list {
+    font-size: 10px;
+
+    * {
+      user-select: none;
+    }
+
+    .pagination-item {
+      float: left;
+      background: #fff;
+      border: 1px solid #e8ccd4;
+      line-height: 26px;
+      border-radius: 27px;
+      min-width: 27px;
+      height: 27px;
+      padding: 0 6px;
+      font-size: inherit;
+      color: inherit;
+      text-align: center;
+      cursor: pointer;
+
+      &.is-current {
+        color: #fff;
+        border-color: #eb5279;
+        background: #eb5279;
+        transform: scale(1) !important;
+        pointer-events: none;
+      }
+
+      &.to {
+        font-size: 16px;
+      }
+    }
+
+    .pagination-item + .pagination-item {
+      margin-left: 8px;
+    }
+
+    .next-item,
+    .prev-item {
+      padding: 0;
+      position: relative;
+      z-index: 1;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 8px auto;
+      font-size: 0;
+
+      &.is-disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        border-color: #d1d9e0;
+        transform: scale(1) !important;
+
+        * {
+          pointer-events: none;
+        }
+      }
+    }
+
+    .prev-item {
+      background-image: url('~images/prev.png');
+    }
+
+    .next-item {
+      background-image: url('~images/next.png');
+    }
+  }
+}
