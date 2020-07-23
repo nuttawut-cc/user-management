@@ -19,7 +19,7 @@ const mockUserData = {
     nationality: 'Thai',
     gender: 'Male',
     birthday: moment('1991-06-06T00:00:00').valueOf(),
-    citizenId: ['1', '1007', '01355', '06', '6'],
+    citizenId: null,
     mobilePhone: {
       countryCode: '+66',
       number: '618815537',
