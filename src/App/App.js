@@ -81,7 +81,7 @@ function App(props) {
 
   function injectUserDataTable() {
     return userDataTable.slice(
-      pageOptions.pageNumber - 1,
+      (pageOptions.pageNumber - 1) * pageOptions.pageSize,
       pageOptions.pageSize * pageOptions.pageNumber
     )
   }
